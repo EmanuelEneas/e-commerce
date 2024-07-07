@@ -1,0 +1,27 @@
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin: 1rem 0;
+    font-family: fantasy;
+    font-size: 40px;
+  }
+  
+
+  .nav-link {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s;
+  }
+  
+
+  .nav-link-active {
+    color: #FA2CB5;
+  }
+  
+
+  .nav-link-inactive {
+    color: #F006B4;
+  }
+  

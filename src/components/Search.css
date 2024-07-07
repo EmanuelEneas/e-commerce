@@ -1,0 +1,33 @@
+.search-container {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+
+.search-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: #ee01a7;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-label {
+    font-family: Monospace;
+    font-size: 20px;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+.search-input {
+    font-family: Monospace;
+    font-size: 15px;
+    cursor: pointer;
+    padding: 5px;
+    border: 1px solid #070606;
+    border-radius: 5px;
+    outline: none;
+}

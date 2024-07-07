@@ -1,0 +1,26 @@
+:root {
+    --padding: 1rem;
+    --gap: 1rem;
+    --min-column-width: 280px;
+    --background-image: url('/cart.jpg');
+    --min-height: 92vh;
+}
+
+.container {
+    display: grid;
+    padding: var(--padding);
+    grid-template-columns: repeat(auto-fill, minmax(var(--min-column-width), 1fr));
+    gap: var(--gap);
+    background-image: var(--background-image);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: var(--min-height);
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
