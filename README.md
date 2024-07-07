@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Presentacion
 
 Esta es una aplicación creada  muestra un listado de productos utilizando la API pública de Fakestore. La aplicación es adaptable tanto para desktop como para mobile y cuenta con varias funcionalidades adicionales.
@@ -20,6 +21,9 @@ Esta es una aplicación creada  muestra un listado de productos utilizando la AP
 
 
 
+=======
+# e-commerce
+>>>>>>> 868008ec99f48d4789e3d5571b83a6a1ce423db7
 =======
 # e-commerce
 >>>>>>> 868008ec99f48d4789e3d5571b83a6a1ce423db7
