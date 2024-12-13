@@ -1,9 +1,7 @@
-/* Navbar mejorado */
-
-/* Estilo del navbar */
+/* Navbar General */
 .navbar {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between; /* Asegurar distribución adecuada */
   align-items: center;
   padding: 1rem 2rem;
   background: linear-gradient(90deg, #1e3c72, #2a5298);
@@ -11,50 +9,52 @@
   font-weight: bold;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
   transition: background 0.5s ease, box-shadow 0.5s ease;
+  position: sticky; /* Mantener fijo en scroll */
+  top: 0;
+  z-index: 1000;
 }
 
-/* Efecto al pasar el mouse */
-.navbar:hover {
-  background: linear-gradient(90deg, #2a5298, #1e3c72);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.8);
-}
-
-/* Enlaces de navegación */
+/* Navbar Enlaces */
 .nav-link {
   text-decoration: none;
   color: #fff;
-  font-weight: bold;
-  font-size: 24px;
-  padding: 12px 20px;
-  border-radius: 12px;
+  font-size: 18px; /* Reducir tamaño */
+  padding: 10px 15px; /* Ajustar padding */
+  border-radius: 8px;
   transition: all 0.3s ease-in-out;
-  display: inline-flex;
-  align-items: left;
   text-transform: capitalize;
 }
 
-/* Hover de enlaces */
+/* Hover en Enlaces */
 .nav-link:hover {
   background: rgba(255, 255, 255, 0.2);
   transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
 }
 
-/* Enlace activo */
-.nav-link-active {
+/* Navbar Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Colocar elementos en columna */
+    align-items: flex-start; /* Alinear elementos al inicio */
+    padding: 0.5rem 1rem; /* Reducir padding */
+  }
+
+  .nav-link {
+    font-size: 16px; /* Reducir tamaño de fuente */
+    padding: 8px 12px; /* Espacio más compacto */
+    width: 100%; /* Ancho completo para fácil clic en móvil */
+    margin-bottom: 5px; /* Separación entre enlaces */
+  }
+
+  .navbar-logo {
+    font-size: 20px; /* Reducir tamaño del logo */
+    margin-bottom: 10px;
+  }
+}
+
+/* Ajustes adicionales */
+.navbar-logo {
+  font-size: 24px;
   color: #ffeb3d;
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 12px;
   font-weight: bold;
 }
-
-/* Enlace inactivo */
-.nav-link-inactive {
-  color: #e0f7fa;
-}
-
-/* Espacio entre enlaces */
-.nav-link:not(:last-child) {
-  margin-right: 1.5rem;
-}
-

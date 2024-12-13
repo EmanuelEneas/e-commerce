@@ -1,49 +1,101 @@
-/* Navbar */
-.navbar {
+/* Estilización principal del Header */
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 10px 20px;
   background: linear-gradient(90deg, #1e3c72, #2a5298);
-  padding: 0.5rem 1rem; /* Reducir el padding */
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
-  position: sticky;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  position: fixed;
   top: 0;
+  width: 100%;
   z-index: 1000;
+  transition: 0.3s ease-in-out, transform 0.3s ease;
+  height: 70px; /* Altura fija para el Header */
 }
 
-.nav-link {
+/* Efecto al desplazarse */
+.header:hover {
+  transform: scale(1.03) rotate(1deg);
+}
+
+/* Logo y Título */
+.logo .header-title {
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 5px;
+  color: #ffeb3d;
+  transition: 0.3s ease;
+}
+
+/* Logo Hover */
+.logo .header-title:hover {
+  color: #ffa726;
+}
+
+/* Enlaces de navegación */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-weight: 500;
+}
+
+/* Estilización de enlaces */
+.nav-links a {
   text-decoration: none;
-  color: #c0dff0;
+  color: #fff;
   font-weight: bold;
-  font-size: 1rem; /* Reducir tamaño de fuente */
-  transition: color 0.3s ease-in-out;
-  margin: 0 0.5rem; /* Reducir márgenes */
+  transition: 0.3s ease-in-out;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 1rem;
 }
 
-.nav-link:hover {
-  color: #ffeb3d;
-  text-decoration: underline;
+/* Hover en enlaces */
+.nav-links a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
-.navbar-logo {
-  font-size: 1.2rem; /* Tamaño ajustado del logo */
-  color: #ffeb3d;
-  font-weight: bold;
+/* Hover con texto interactivo */
+.nav-links a:active {
+  color: #00e5ff;
 }
 
-/* Ajustes responsivos */
+/* Estilo de contenedor principal para evitar que el contenido quede oculto */
+.main-content {
+  padding-top: 80px; /* Ajusta este valor para coincidir con la altura del Header */
+}
+
+/* Respuesta móvil */
 @media (max-width: 768px) {
-  .navbar {
-    flex-direction: column; /* Apilar elementos verticalmente */
-    padding: 0.5rem; /* Reducir padding aún más */
+  .header {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    background: linear-gradient(90deg, #2a5298, #1e3c72);
+    height: auto; /* Altura automática para ajustar contenido en pantallas pequeñas */
   }
 
-  .nav-link {
-    font-size: 0.9rem; /* Tamaño más pequeño */
-    margin: 5px 0; /* Separación vertical mínima */
+  .nav-links {
+    margin-top: 10px;
+    flex-direction: column;
+    gap: 12px;
   }
 
-  .navbar-logo {
-    font-size: 1rem; /* Tamaño más pequeño del logo */
+  .logo .header-title {
+    font-size: 1.8rem;
+  }
+
+  .nav-links a {
+    padding: 10px;
+    font-weight: bold;
+  }
+
+  .main-content {
+    padding-top: 100px; /* Ajuste adicional para pantallas móviles */
   }
 }
