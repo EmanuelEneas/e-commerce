@@ -36,11 +36,11 @@ function Products() {
             }}
           >
             <Search />
-            <Sort />
-            <FilterByPrice />
+            
           </div>
           <CartSummary />
         </div>
+        <FilterByPrice />
       </Header>
       <main className="container">
         {products
@@ -52,7 +52,10 @@ function Products() {
           .map((prod) => (
             <Product prod={prod} key={prod.id} />
           ))}
+              
       </main>
+      <Sort />
+      
     </>
   );
 }

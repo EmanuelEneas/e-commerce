@@ -1,0 +1,169 @@
+/* Tarjeta del producto */
+.card {
+  background-color: #1f2937;
+  border-radius: 16px; /* Bordes más suaves */
+  padding: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: auto;
+  margin: 1.5rem;
+  position: relative;
+  max-width: 320px; /* Limita el ancho para una presentación más uniforme */
+}
+
+/* Efecto hover */
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+}
+
+/* Imagen del producto */
+.card img {
+  width: 100%;
+  height: 300px; /* Proporciones optimizadas para mostrar imágenes de productos */
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Contenedor interno para contenido de la tarjeta */
+.cardInnerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  gap: 10px;
+}
+
+/* Título del producto */
+.card-title {
+  font-size: 1.4rem;
+  color: #ffeb3d;
+  font-weight: bold;
+  margin: 10px 0;
+  text-align: left;
+  word-wrap: break-word; /* Permite dividir palabras largas */
+}
+
+/* Sección de precio y botón */
+.card-price-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+}
+
+.card-price {
+  font-weight: bold;
+  color: #ffeb3d;
+  font-size: 1.5rem;
+}
+
+/* Botón de agregar al carrito */
+.card-btn {
+  background-color: #ff5722;
+  color: white;
+  padding: 12px 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  white-space: nowrap;
+  text-align: center;
+  width: auto;
+  max-width: 100%;
+}
+
+.card-btn:hover {
+  background-color: #ff9100;
+  transform: translateY(-3px) scale(1.05);
+}
+
+.card-btn:active {
+  transform: scale(1.02);
+}
+
+/* Descripción del producto */
+.card-description {
+  font-size: 1rem;
+  color: #a1c6e7;
+  padding: 10px;
+  line-height: 1.6;
+  display: block;
+  overflow: visible; /* Muestra todo el contenido */
+  text-align: left;
+}
+
+/* Scroll personalizado para la descripción (si es necesario para textos largos) */
+.card-description::-webkit-scrollbar {
+  width: 6px;
+}
+
+.card-description::-webkit-scrollbar-thumb {
+  background-color: #c0dff0;
+  border-radius: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card {
+    width: 90%;
+    padding: 15px;
+    margin: 1rem auto;
+  }
+
+  .card img {
+    height: 200px;
+  }
+
+  .card-title {
+    font-size: 1.4rem;
+  }
+
+  .card-price {
+    font-size: 1.3rem;
+  }
+
+  .card-btn {
+    font-size: 0.9rem;
+    padding: 10px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 10px;
+    margin: 1rem auto;
+  }
+
+  .card img {
+    height: 180px;
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+  }
+
+  .card-price {
+    font-size: 1.2rem;
+  }
+
+  .card-description {
+    font-size: 0.9rem;
+  }
+}

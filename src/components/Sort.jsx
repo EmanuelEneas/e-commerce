@@ -1,20 +1,24 @@
 import { useContext } from "react";
-import { BsSortNumericDown } from "react-icons/bs";
-import { BsSortNumericDownAlt } from "react-icons/bs";
+import { GoArrowDown, GoArrowUp } from "react-icons/go";
 import { productsContext } from "../context/ProductsContext";
+import './Sort.css';
+
 function Sort() {
   const { sortedMaxToMin, handleSort } = useContext(productsContext);
+
   return (
-    <section>
+    <section className="sort-section">
       {sortedMaxToMin ? (
-        <BsSortNumericDown
-          style={{ fontSize: "2rem", cursor: "pointer",color:"#490196" }}
-          onClick={handleSort}
+        <GoArrowUp 
+          className="sort-icon active" 
+          onClick={handleSort} 
+          title="Ordenar de Mayor a Menor"
         />
       ) : (
-        <BsSortNumericDownAlt
-          style={{ fontSize: "2rem", cursor: "pointer",color:"#C60087" }}
-          onClick={handleSort}
+        <GoArrowDown
+          className="sort-icon" 
+          onClick={handleSort} 
+          title="Ordenar de Menor a Mayor"
         />
       )}
     </section>
@@ -22,3 +26,4 @@ function Sort() {
 }
 
 export default Sort;
+

@@ -9,7 +9,7 @@ export const ProductsContextProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [sortedMaxToMin, setSortedMaxToMin] = useState(false);
-  const [maxPrice, setMaxPrice] = useState(1000);
+  const [maxPrice, setMaxPrice] = useState(300);
   const [query, setQuery] = useState("");
 
   const handleSort = () => {

@@ -7,7 +7,7 @@ function Search() {
   return (
     <div className="search-container">
     <form className="search-form">
-      <label className="search-label" htmlFor="searchTerm">Search/Buscador</label>
+      <label className="search-label" htmlFor="searchTerm">Search</label>
       <input
         className="search-input"
         type="search"

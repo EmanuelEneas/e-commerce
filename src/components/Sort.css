@@ -1,0 +1,30 @@
+/* Sort.css */
+
+/* Sección del filtro Sort */
+.sort-section {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+  box-shadow: 0 -3px 15px rgba(0, 0, 0, 0.6);
+}
+
+/* Icono de ordenación */
+.sort-icon {
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  padding: 8px;
+}
+
+/* Hover del icono */
+.sort-icon:hover {
+  transform: scale(1.2);
+  color: #ffeb3d;
+}

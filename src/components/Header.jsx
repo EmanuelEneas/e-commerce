@@ -1,33 +1,15 @@
 import React from "react";
+import "./Header.css";
 
-function Header({ children }) {
+function Header({ children, title = "E-commerce", style, className }) {
   return (
-    <header style={{ 
-      height: "115px", 
-      backgroundColor: "#f8f9fa", 
-      display: "flex", 
-      flexDirection: "column", 
-      justifyContent: "center", 
-      alignItems: "center",
-      boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)"
-    }}>
-      <h1 style={{ 
-  textAlign: "center", 
-  color: "#343a40", 
-  margin: "20px 0", 
-  fontSize: "3rem", 
-  fontFamily: "'Roboto', sans-serif", 
-  fontWeight: "bold", 
-  textTransform: "uppercase", 
-  letterSpacing: "2px", 
-  background: "linear-gradient(90deg, rgba(255, 0, 150, 0.5), rgba(0, 204, 255, 0.5))", 
-  WebkitBackgroundClip: "text", 
-  WebkitTextFillColor: "transparent"
-}}>
-  Emanuel Caceres
-</h1>
-
-      {children}
+    <header className={`header ${className || ""}`} style={style} role="banner" aria-label="Header section">
+      <div className="logo">
+        <h1 className="header-title">{title}</h1>
+      </div>
+      <nav className="nav-links">
+        {children}
+      </nav>
     </header>
   );
 }
