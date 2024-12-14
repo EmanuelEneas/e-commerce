@@ -18,7 +18,7 @@
 
 /* Logo y Título */
 .logo .header-title {
-  font-size: 1.8rem; /* Tamaño dinámico */
+  font-size: 1rem; /* Tamaño dinámico */
   font-weight: bold;
   letter-spacing: 3px;
   color: #ffeb3d;
@@ -56,7 +56,7 @@
 
 /* Contenido Principal */
 .main-content {
-  padding-top: 80px; /* Altura ajustada para contenido debajo del header */
+  padding-top: 2px; /* Altura ajustada para contenido debajo del header */
 }
 
 /* Estilo Responsive */
