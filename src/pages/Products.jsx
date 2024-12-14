@@ -18,44 +18,32 @@ function Products() {
     <>
       <Header>
         <Navbar />
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            padding: "0 2em",
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              columnGap: "8em ",
-              cursor : "pointer",
-           
-            }}
-          >
-            <Search />
-            
-          </div>
+        
+        {/* Buscador y carrito */}
+        <div className="search-container">
+          <Search />
           <CartSummary />
         </div>
+
         <FilterByPrice />
       </Header>
-      <main className="container">
-        {products
-          .filter(
-            (prod) =>
-              prod.price <= maxPrice &&
-              prod.title.toLocaleLowerCase().includes(query.toLocaleLowerCase())
-          )
-          .map((prod) => (
-            <Product prod={prod} key={prod.id} />
-          ))}
-              
+
+      {/* Main content con productos */}
+      <main className="products-container">
+        {products.length > 0 ? (
+          products
+            .filter(
+              (prod) =>
+                prod.price <= maxPrice &&
+                prod.title.toLocaleLowerCase().includes(query.toLocaleLowerCase())
+            )
+            .map((prod) => <Product prod={prod} key={prod.id} />)
+        ) : (
+          <p className="no-products">No se encontraron productos</p>
+        )}
       </main>
+
       <Sort />
-      
     </>
   );
 }
