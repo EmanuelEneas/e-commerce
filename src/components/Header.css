@@ -1,88 +1,58 @@
-/* Header Principal */
+/* Header.css */
+
+/* Estilos generales del Header */
 .header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  background: linear-gradient(90deg, #1e3c72, #2a5298);
-  color: #fff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  transition: 0.3s ease-in-out, transform 0.3s ease;
-  height: auto; /* Ajuste automático según contenido */
-  min-height: 70px; /* Altura mínima para diseño uniforme */
+  align-items: center; /* Centra verticalmente */
+  padding: 10px 15px; /* Espaciado reducido */
+  background-color: #002244; /* Color de fondo, ajusta según tu diseño */
+  color: #fff; /* Color del texto */
+  height: 60px; /* Altura fija más delgada */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra ligera */
 }
 
-/* Logo y Título */
-.logo .header-title {
-  font-size: 1rem; /* Tamaño dinámico */
-  font-weight: bold;
-  letter-spacing: 3px;
-  color: #ffeb3d;
-  transition: 0.3s ease;
+/* Título del Header */
+.header-title {
+  font-size: 1.2rem; /* Tamaño de letra reducido */
+  margin: 0; /* Elimina márgenes extra */
 }
 
-.logo .header-title:hover {
-  color: #ffa726;
+/* Estilos del logo */
+.logo {
+  flex: 1; /* Ajuste flexible */
 }
 
-/* Enlaces de Navegación */
+/* Enlaces de navegación */
 .nav-links {
   display: flex;
-  align-items: center;
-  gap: 15px;
-  font-weight: 500;
-  flex-wrap: wrap; /* Permitir que los enlaces se ajusten */
+  gap: 15px; /* Espaciado entre enlaces */
 }
 
-/* Estilización de Enlaces */
 .nav-links a {
   text-decoration: none;
-  color: #fff;
-  font-weight: bold;
-  transition: 0.3s ease-in-out;
-  padding: 6px 10px;
-  border-radius: 6px;
-  font-size: 0.9rem; /* Tamaño adaptado */
+  color: #00d4ff; /* Color de los enlaces */
+  font-size: 1rem; /* Tamaño de fuente */
+  transition: color 0.3s;
 }
 
 .nav-links a:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: translateY(-2px);
+  color: #ffa500; /* Color al pasar el cursor */
 }
 
-/* Contenido Principal */
-.main-content {
-  padding-top: 2px; /* Altura ajustada para contenido debajo del header */
-}
-
-/* Estilo Responsive */
-@media (max-width: 768px) {
+/* Ajustes para dispositivos móviles */
+@media screen and (max-width: 768px) {
   .header {
-    flex-direction: column;
-    align-items: center;
-    padding: 10px; /* Reducir padding en móviles */
+    height: 50px; /* Header aún más delgado */
+    padding: 5px 10px; /* Menor espaciado */
   }
 
-  .nav-links {
-    margin-top: 10px;
-    flex-direction: column;
-    gap: 10px; /* Espaciado menor */
-  }
-
-  .logo .header-title {
-    font-size: 1.5rem; /* Reducir tamaño en móviles */
+  .header-title {
+    font-size: 1rem; /* Reduce aún más el tamaño de la letra */
   }
 
   .nav-links a {
-    padding: 8px 12px;
-    font-size: 1rem; /* Fuente clara y legible */
-  }
-
-  .main-content {
-    padding-top: 120px; /* Asegura que el contenido no quede oculto */
+    font-size: 0.9rem;
   }
 }
+
