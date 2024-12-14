@@ -5,19 +5,20 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 10px;
-  margin-top: 2rem;
-  margin-right: 35px;
-  background: #1e252d;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s ease-in-out;
+  padding: 8px;
+  margin-top: 1.5rem;
+  margin-right: 20px;
+  background: #232a33;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 250px; /* Limitar el ancho */
 }
 
 /* Efecto al interactuar con el contenedor */
 .filter-price-container:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0, 255, 200, 0.5);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 255, 200, 0.4);
 }
 
 /* Estilo del input del rango */
@@ -25,28 +26,29 @@
   -webkit-appearance: none;
   appearance: none;
   width: 100%;
-  height: 8px;
-  border-radius: 5px;
-  background: linear-gradient(to right, #007BFF, #00FF7F);
+  height: 6px; /* Más compacto */
+  border-radius: 3px; /* Redondeado más ligero */
+  background: linear-gradient(to right, #0056b3, #00ff88); /* Colores más sobrios */
   outline: none;
-  transition: opacity 0.2s ease;
+  transition: background 0.3s ease, opacity 0.3s ease;
   cursor: pointer;
 }
 
 .range-input:hover {
-  opacity: 0.8;
+  background: linear-gradient(to right, #004080, #00cc6e); /* Efecto hover sutil */
+  opacity: 0.9;
 }
 
 /* Párrafo con el precio máximo actual */
 .price-info {
-  font-family: 'Courier New', monospace;
-  font-size: 20px;
+  font-family: 'Arial', sans-serif;
+  font-size: 14px; /* Texto más pequeño */
   color: #fffb02;
-  background-color: #2e3b4e;
-  padding: 5px;
-  margin-top: 5px;
-  border-radius: 8px;
+  background-color: #2b3540;
+  padding: 4px 6px;
+  margin-top: 8px;
+  border-radius: 6px;
   text-align: left;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
   width: 100%;
 }

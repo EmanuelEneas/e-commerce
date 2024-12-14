@@ -19,7 +19,6 @@ function Products() {
       <Header>
         <Navbar />
         
-        {/* Buscador y carrito */}
         <div className="search-container">
           <Search />
           <CartSummary />
@@ -28,7 +27,6 @@ function Products() {
         <FilterByPrice />
       </Header>
 
-      {/* Main content con productos */}
       <main className="products-container">
         {products.length > 0 ? (
           products
@@ -39,7 +37,9 @@ function Products() {
             )
             .map((prod) => <Product prod={prod} key={prod.id} />)
         ) : (
-          <p className="no-products">No se encontraron productos</p>
+          <div className="empty-cart-message">
+            ¡Tu carrito está vacío! 🛒
+          </div>
         )}
       </main>
 
@@ -49,3 +49,4 @@ function Products() {
 }
 
 export default Products;
+

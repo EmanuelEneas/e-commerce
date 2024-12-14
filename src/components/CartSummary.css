@@ -1,4 +1,22 @@
-/* CartSummary.css */
+/* Mensaje del carrito vacío */
+.cart-summary-empty {
+  position: fixed;
+  top: 50px;
+  right: 15px;
+  font-family: "Poppins", Arial, sans-serif;
+  color: rgba(255, 255, 255, 0.8); /* Color más transparente */
+  background: linear-gradient(135deg, rgba(255, 78, 80, 0.7), rgba(249, 212, 35, 0.7)); /* Fondo más transparente */
+  padding: 5px 10px; /* Espaciado más pequeño */
+  font-size: 1rem; /* Texto más pequeño */
+  font-weight: 500; /* Peso reducido */
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(255, 87, 34, 0.4); /* Sombra más ligera */
+  animation: slideIn 0.8s ease-out;
+  backdrop-filter: blur(5px); /* Menor desenfoque */
+  text-transform: uppercase;
+  letter-spacing: 1px; /* Espaciado de letras reducido */
+  z-index: 1100;
+}
 
 /* Contenedor principal del carrito */
 .cart-summary {
@@ -8,19 +26,28 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(135deg, #1e3c72, #2a5298);
-  padding: 15px;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-  z-index: 1000; /* Asegura que el carrito siempre esté en primer plano */
-  transition: transform 0.3s, box-shadow 0.3s;
-  animation: pulse 2s infinite ease-in-out;
+  background: linear-gradient(145deg, #232526, #414345);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.8);
+  z-index: 1000; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: float 2s infinite ease-in-out;
 }
 
 /* Hover y efecto sutil */
 .cart-summary:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(66, 165, 245, 0.7);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 123, 255, 0.7);
+}
+
+/* Total del carrito con estilo futurista */
+.cart-total {
+  font-weight: bold;
+  font-size: 1.8rem;
+  color: #76ff03;
+  text-shadow: 0 0 15px rgba(118, 255, 3, 0.7);
+  letter-spacing: 1px;
 }
 
 /* Enlace al carrito */
@@ -28,60 +55,45 @@
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: #fff;
-  transition: opacity 0.3s;
+  color: #ffffff;
+  font-size: 1rem;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* Efecto hover en el enlace */
+/* Hover en el enlace */
 .cart-link:hover {
-  opacity: 0.8;
+  opacity: 0.85;
+  transform: translateX(3px);
 }
 
-/* Total del carrito con estilo futurista */
-.cart-total {
-  font-weight: bold;
-  font-size: 1.8rem;
-  color: #00ffea;
-  text-shadow: 0 0 10px rgba(0, 255, 234, 0.7);
-}
-
-/* Mensaje vacío del carrito */
-.cart-summary-empty {
-  font-family: Arial, sans-serif;
-  color: #f1f1f1;
-  text-align: center;
-  font-size: 1.5rem;
-  background: linear-gradient(90deg, #ff5722, #ffeb3d);
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 15px rgba(255, 165, 0, 0.7);
-  animation: fadeIn 1.5s ease;
-}
-
-/* Efecto de pulso suave */
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    box-shadow: 0 0 15px rgba(0, 0, 255, 0.6);
+/* Animación de flotación */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
   }
   50% {
-    transform: scale(1.02);
-    box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
-  }
-  100% {
-    transform: scale(1);
-    box-shadow: 0 0 15px rgba(0, 0, 255, 0.6);
+    transform: translateY(-5px);
   }
 }
 
-/* Animación fade-in para carrito vacío */
-@keyframes fadeIn {
+/* Animación de entrada */
+@keyframes slideIn {
   from {
     opacity: 0;
-    transform: scale(0.9);
+    transform: translateY(-20px);
   }
   to {
     opacity: 1;
-    transform: scale(1);
+    transform: translateY(0);
+  }
+}
+
+/* Animación de brillo */
+@keyframes glow {
+  from {
+    box-shadow: 0 0 15px rgba(255, 165, 0, 0.6);
+  }
+  to {
+    box-shadow: 0 0 25px rgba(255, 235, 61, 0.8);
   }
 }

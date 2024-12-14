@@ -12,7 +12,7 @@ function Search() {
         className="search-input"
         type="search"
         id="searchTerm"
-        placeholder="samsung,pierced,lock..."
+        placeholder="pierced,mens..."
         onChange={(e) => handleQuery(e.target.value)}
       />
     </form>
