@@ -1,65 +1,96 @@
-/* Header.css */
-
-/* Ajuste general del Header */
+/* Header General */
 .header {
   display: flex;
   justify-content: space-between;
-  align-items: center; /* Centra el contenido verticalmente */
-  padding: 5px 10px; /* Menor espaciado */
-  background-color: #002244; /* Color de fondo */
-  color: #fff; /* Color del texto */
-  height: 50px; /* Reduce la altura a 50px */
-  position: fixed; /* Fija el header arriba */
-  top: 0; /* Posiciona al inicio */
-  left: 0;
-  right: 0;
-  z-index: 1000; /* Se asegura de que esté encima de otros elementos */
+  align-items: center;
+  padding: 10px 20px;
+  background: linear-gradient(90deg, #1e3c72, #2a5298);
+  color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Evita que los elementos se solapen con el header */
-body {
-  margin-top: 60px; /* Espacio extra para que no se tape el contenido */
-}
-
-/* Título del Header */
 .header-title {
-  font-size: 1.1rem; /* Reduce tamaño del texto */
-  margin: 0; /* Elimina márgenes extra */
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-/* Enlaces del Header */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
 .nav-links {
   display: flex;
-  gap: 10px; /* Espaciado entre enlaces */
+  gap: 15px;
 }
 
 .nav-links a {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff;
   text-decoration: none;
-  color: #00d4ff;
-  font-size: 0.9rem;
-  transition: color 0.3s;
+  transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .nav-links a:hover {
-  color: #ffa500;
+  color: #ffeb3d;
+  transform: scale(1.05);
 }
 
-/* Ajustes para dispositivos móviles */
-@media screen and (max-width: 768px) {
+.nav-links a:focus {
+  outline: 2px solid #ffeb3d;
+  border-radius: 5px;
+}
+
+/* Responsivo para pantallas más pequeñas */
+@media (max-width: 768px) {
   .header {
-    height: 45px; /* Altura más delgada para móviles */
-    padding: 5px; /* Menor espaciado horizontal */
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    text-align: center;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
   }
 
   .header-title {
-    font-size: 1rem; /* Texto más pequeño */
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 10px;
+  }
+
+  .header-title {
+    font-size: 1.4rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 8px;
   }
 
   .nav-links a {
-    font-size: 0.8rem;
-  }
-
-  body {
-    margin-top: 50px; /* Ajusta margen para móviles */
+    font-size: 0.9rem;
   }
 }
+
