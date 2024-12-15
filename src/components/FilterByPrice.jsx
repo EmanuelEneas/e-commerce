@@ -14,6 +14,7 @@ function FilterByPrice() {
 
   return (
     <div className="filter-price-container">
+      <label></label>
       <input
         className="range-input"
         type="range"
@@ -25,9 +26,7 @@ function FilterByPrice() {
         value={price}
         onChange={handleRangeChange}
       />
-      <p className="price-info">
-        Top price: ${price.toFixed(2)}
-      </p>
+      <p className="price-info">Top price: ${price.toFixed(2)}</p>
     </div>
   );
 }
