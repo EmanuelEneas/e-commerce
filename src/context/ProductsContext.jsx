@@ -1,6 +1,7 @@
 import React, { useState, useEffect, createContext } from "react";
 import { getAllProducts } from "../services/productService";
 import { initialProduct } from "../services/initialProduct";
+import "./ProductsContext.css"
 export const productsContext = createContext([initialProduct]);
 
 export const ProductsContextProvider = ({ children }) => {
