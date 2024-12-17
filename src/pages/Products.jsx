@@ -11,14 +11,20 @@ import Search from "../components/Search";
 import CartSummary from "../components/CartSummary";
 
 function Products() {
-  const { products, isLoading, error, maxPrice, query, cart } =
+  const { products, isLoading, error, maxPrice, query } =
     useContext(productsContext);
+
+  const filteredProducts = products.filter(
+    (prod) =>
+      prod.price <= maxPrice &&
+      prod.title.toLowerCase().includes(query.toLowerCase())
+  );
 
   return (
     <>
       <Header>
         <Navbar />
-        
+
         <div className="search-container">
           <Search />
           <CartSummary />
@@ -28,18 +34,14 @@ function Products() {
       </Header>
 
       <main className="products-container">
-        {products.length > 0 ? (
-          products
-            .filter(
-              (prod) =>
-                prod.price <= maxPrice &&
-                prod.title.toLocaleLowerCase().includes(query.toLocaleLowerCase())
-            )
-            .map((prod) => <Product prod={prod} key={prod.id} />)
+        {isLoading ? (
+          <div className="loading-spinner">Cargando productos...</div>
+        ) : error ? (
+          <div className="error-message">Error: {error}</div>
+        ) : filteredProducts.length > 0 ? (
+          filteredProducts.map((prod) => <Product prod={prod} key={prod.id} />)
         ) : (
-          <div className="empty-cart-message">
-            ¡Tu carrito está vacío! 🛒
-          </div>
+          <div className="empty-cart-message">No se encontraron productos 🛒</div>
         )}
       </main>
 

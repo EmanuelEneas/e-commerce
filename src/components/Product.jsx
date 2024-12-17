@@ -6,23 +6,35 @@ function Product({ prod }) {
   const { addToCart } = useContext(productsContext);
 
   return (
-    <div className="card">
-      <h3>{prod.title}</h3>
-      <div className="cardInnerContainer">
-        <img src={prod.image} alt={prod.title} />
-        <div className="card-price-btn">
-          <p className="card-price">${prod.price}</p>
-          <button className="card-btn" onClick={() => addToCart(prod)}>
+    <div className="product-card">
+      <h3 className="product-title">{prod.title}</h3>
+      <div className="product-image-container">
+        <img
+          className="product-image"
+          src={prod.image}
+          alt={prod.title}
+          loading="lazy"
+        />
+      </div>
+      <div className="product-details">
+        <p className="product-description">
+          {prod.description.length > 40
+            ? `${prod.description.slice(0, 40)}...`
+            : prod.description}
+        </p>
+        <div className="product-price-btn">
+          <p className="product-price">${prod.price.toFixed(2)}</p>
+          <button
+            className="product-btn"
+            onClick={() => addToCart(prod)}
+            aria-label={`Add ${prod.title} to cart`}
+          >
             Add to Cart
           </button>
         </div>
       </div>
-      <p className="card-description">
-        {prod.description.slice(0, 40)}...
-      </p>
     </div>
   );
 }
 
 export default Product;
-
